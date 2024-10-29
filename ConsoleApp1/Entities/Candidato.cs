@@ -5,18 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ConsoleApp1 {
-    internal class Candidato {
-        public string Nome { get; set; }
+    internal class Candidato(string nome)
+    {
+        private string Nome { get; set; } = nome;
         public int Votos { get; private set; }
-        private int Porcentagem;
-
-
-        public Candidato(string nome) {
-            Nome = nome;
-            Votos = 0;
-        }
-
-
+        protected int Porcentagem;
+        
         public void ComputarVoto() {
             Votos++;
         }
@@ -27,9 +21,6 @@ namespace ConsoleApp1 {
 
         public override string ToString() {
             return Nome + " " + Votos;
-            ;
         }
-
-
     }
 }
